@@ -1,0 +1,6 @@
+{
+    "name": "savtrans/symfony1",
+    "type": "library",
+    "license": "MIT",
+    "require": {}
+}
