@@ -249,7 +249,7 @@ class IntrospectionHelper {
 
                     $classname = null;
                     
-                    if (($hint = $params[0]->getClass()) !== null) { 
+                    if (($hint = $params[0]->getType()) !== null) {
                         $classname = $hint->getName();    
                     }                    
                     
@@ -326,7 +326,7 @@ class IntrospectionHelper {
 
                 $classname = null;
                 
-                if (($hint = $params[0]->getClass()) !== null) { 
+                if (($hint = $params[0]->getType()) !== null) {
                     $classname = $hint->getName();    
                 }
                 
@@ -412,7 +412,7 @@ class IntrospectionHelper {
 
                 $classname = null;
             
-                if (($hint = $params[0]->getClass()) !== null) { 
+                if (($hint = $params[0]->getType()) !== null) {
                     $classname = $hint->getName();    
                 }                
                 

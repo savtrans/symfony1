@@ -20,6 +20,7 @@
  * <http://propel.phpdb.org>.
  */
 
+require_once 'propel/engine/database/model/VendorInfo.php';
 require_once 'propel/engine/database/model/XMLElement.php';
 include_once 'propel/engine/database/model/IDMethod.php';
 include_once 'propel/engine/database/model/NameGenerator.php';
