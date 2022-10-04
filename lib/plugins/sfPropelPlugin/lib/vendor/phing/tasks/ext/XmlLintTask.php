@@ -125,7 +125,7 @@ class XmlLintTask extends Task {
    * @param string $file
    * @param int    $line
    */
-  public function errorHandler($level, $message, $file, $line, $context) {
+  public function errorHandler($level, $message, $file, $line) {
     $matches = array();
     preg_match('/^.*\(\): (.*)$/', $message, $matches);
     $this->log($matches[1], Project::MSG_ERR);
