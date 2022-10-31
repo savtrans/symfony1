@@ -214,6 +214,7 @@ class Propel
 		'PropelPager'         => 'propel/util/PropelPager.php',
 		'PropelDateTime'      => 'propel/util/PropelDateTime.php',
 		'DebugPDO'            => 'propel/util/DebugPDO.php',
+		'DebugPDOQueryTrait'  => 'propel/util/DebugPDOQueryTrait.php',
 		'DebugPDOStatement'   => 'propel/util/DebugPDOStatement.php',
 
 

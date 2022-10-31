@@ -118,6 +118,8 @@
  */
 class DebugPDO extends PropelPDO
 {
+	use DebugPDOQueryTrait;
+
 	const DEFAULT_SLOW_THRESHOLD        = 0.1;
 	const DEFAULT_ONLYSLOW_ENABLED      = false;
 	
@@ -327,7 +329,7 @@ class DebugPDO extends PropelPDO
 	 * @see        http://php.net/manual/en/pdo.query.php for a description of the possible parameters.
 	 * @return     PDOStatement
 	 */
-	public function query()
+	protected function doQuery()
 	{
 		$debug	= $this->getDebugSnapshot();
 		$args	= func_get_args();
