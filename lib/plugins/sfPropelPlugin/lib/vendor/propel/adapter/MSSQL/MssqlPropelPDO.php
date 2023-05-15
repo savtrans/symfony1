@@ -13,7 +13,7 @@ class MssqlPropelPDO extends PropelPDO
 	 * It is necessary to override the abstract PDO transaction functions here, as
 	 * the PDO driver for MSSQL does not support transactions.
 	 */
-	public function beginTransaction()
+	public function beginTransaction(): bool
 	{
 		$return = true;
 		$opcount = $this->getNestedTransactionCount();
@@ -31,7 +31,7 @@ class MssqlPropelPDO extends PropelPDO
 	 * It is necessary to override the abstract PDO transaction functions here, as
 	 * the PDO driver for MSSQL does not support transactions.
 	 */
-  public function commit()
+  public function commit(): bool
 	{
 		$return = true;
 		$opcount = $this->getNestedTransactionCount();
@@ -54,7 +54,7 @@ class MssqlPropelPDO extends PropelPDO
 	 * It is necessary to override the abstract PDO transaction functions here, as
 	 * the PDO driver for MSSQL does not support transactions.
 	 */
-	public function rollBack()
+	public function rollBack(): bool
 	{
 		$return = true;
 		$opcount = $this->getNestedTransactionCount();
@@ -92,7 +92,7 @@ class MssqlPropelPDO extends PropelPDO
 		return $return;
 	}
 
-	public function lastInsertId($seqname = null)
+	public function lastInsertId($seqname = null): string|false
 	{
 		$result = self::query('SELECT SCOPE_IDENTITY()');
 		return (int)$result->fetchColumn();

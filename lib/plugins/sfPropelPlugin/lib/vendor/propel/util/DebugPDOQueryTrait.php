@@ -4,7 +4,7 @@ if (PHP_VERSION_ID >= 80000)
 {
   trait DebugPDOQueryTrait
   {
-    public function query(?string $query = null, ?int $fetchMode = null, mixed ...$fetchModeArgs)
+    public function query(?string $query = null, ?int $fetchMode = null, mixed ...$fetchModeArgs): PDOStatement|false
     {
       return $this->doQuery($query, $fetchMode, ...$fetchModeArgs);
     }

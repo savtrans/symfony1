@@ -83,7 +83,7 @@ class PropelConfigurationIterator extends RecursiveIteratorIterator
 	 * @see        http://www.php.net/RecursiveIteratorIterator
 	 * @return     mixed
 	 */
-	public function current()
+	public function current(): mixed
 	{
 		$current = parent::current();
 		if (is_array($current)) {
@@ -102,7 +102,7 @@ class PropelConfigurationIterator extends RecursiveIteratorIterator
 	 *
 	 * @see        http://www.php.net/RecursiveIteratorIterator
 	 */
-	public function endChildren()
+	public function endChildren(): void
 	{
 		if ($this->namespaceStack) {
 			array_pop($this->namespaceStack);
