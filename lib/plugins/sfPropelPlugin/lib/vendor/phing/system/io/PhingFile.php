@@ -788,7 +788,7 @@ class PhingFile {
     /**
      * Returns the path to the temp directory.
      */
-    function getTempDir() {
+    static function getTempDir() {
         return Phing::getProperty('php.tmpdir');
     }
 

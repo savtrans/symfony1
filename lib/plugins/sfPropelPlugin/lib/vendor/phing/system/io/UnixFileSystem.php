@@ -205,7 +205,7 @@ class UnixFileSystem extends FileSystem {
         if ($f instanceof File) {
             $strPath = (string) $f->getPath();
             $perms = (int) (@fileperms($strPath) & 0444);
-            return FileSystem::Chmod($strPath, $perms);
+            FileSystem::Chmod($strPath, $perms);
         } else {
             throw new Exception("IllegalArgutmentType: Argument is not File");
         }

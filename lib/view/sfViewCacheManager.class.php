@@ -246,7 +246,6 @@ class sfViewCacheManager
    * Gets the hostname part of view cache key.
    *
    * @param string $hostName
-   * @return void
    */
   protected function getCacheKeyHostNamePart($hostName = '')
   {

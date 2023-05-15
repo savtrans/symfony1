@@ -273,9 +273,9 @@ abstract class FileSystem {
      */
     function delete(PhingFile $f) {
         if ($f->isDirectory()) {
-            return $this->rmdir($f->getPath());
+            $this->rmdir($f->getPath());
         } else {
-            return $this->unlink($f->getPath());
+            $this->unlink($f->getPath());
         }
     }
 
@@ -376,7 +376,7 @@ abstract class FileSystem {
     /**
      * Compare two abstract pathnames lexicographically.
      */
-    function compare($f1, $f2) {
+    function compare(PhingFile $f1, PhingFile $f2) {
         throw new Exception("SYSTEM ERROR [compare() not implemented by local fs driver]");
     }
 
