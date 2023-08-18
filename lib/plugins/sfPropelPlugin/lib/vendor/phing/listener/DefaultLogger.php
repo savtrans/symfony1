@@ -252,13 +252,17 @@ class DefaultLogger implements StreamRequiredBuildLogger {
      */
     public static function formatTime($micros) {
         $seconds = $micros;
-        $minutes = $seconds / 60;
-        if ($minutes > 1) {
-            return sprintf("%1.0f minute%s %0.2f second%s",
-                                    $minutes, ($minutes === 1 ? " " : "s "),
-                                    $seconds - floor($seconds/60) * 60, ($seconds%60 === 1 ? "" : "s"));
+        $minutes = (int)floor($seconds / 60);
+        if ($minutes >= 1) {
+            return sprintf(
+                "%1.0f minute%s %0.2f second%s",
+                $minutes,
+                ($minutes === 1 ? " " : "s "),
+                $seconds - floor($seconds / 60) * 60,
+                (intval($seconds) % 60 === 1 ? "" : "s")
+            );
         } else {
-            return sprintf("%0.4f second%s", $seconds, ($seconds%60 === 1 ? "" : "s"));
+            return sprintf("%0.4f second%s", $seconds, (intval($seconds) % 60 === 1 ? "" : "s"));
         }
     }
     
