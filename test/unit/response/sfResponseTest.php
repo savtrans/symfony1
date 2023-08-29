@@ -46,7 +46,7 @@ $t->is($content, 'test', '->sendContent() output the current response content');
 
 // ->serialize() ->unserialize()
 $t->diag('->serialize() ->unserialize()');
-$t->ok(new myResponse($dispatcher) instanceof Serializable, 'sfResponse implements the Serializable interface');
+$t->ok(method_exists(myResponse::class, '__serialize') && method_exists(myResponse::class, '__unserialize'), 'sfResponse is serializable');
 
 // new methods via sfEventDispatcher
 require_once($_test_dir.'/unit/sfEventDispatcherTest.class.php');

@@ -137,7 +137,7 @@ class CrudBrowser extends sfTestBrowser
 
     // edit page
     $this->info('edit page');
-    if (!in_array('with-show', $options) && ($options['with-show'] === true))
+    if (!in_array('with-show', $options) && isset($options['with-show']) && ($options['with-show'] === true))
     {
       $this->click('3');
     }
