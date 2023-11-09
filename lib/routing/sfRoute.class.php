@@ -34,7 +34,9 @@ class sfRoute
     $defaults          = array(),
     $requirements      = array(),
     $tokens            = array(),
-    $customToken       = false;
+    $customToken       = false,
+    $firstOptional     = null,
+    $segments          = array();
 
   /**
    * Constructor.
