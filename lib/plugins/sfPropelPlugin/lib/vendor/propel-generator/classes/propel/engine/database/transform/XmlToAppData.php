@@ -67,6 +67,8 @@ class XmlToAppData extends AbstractHandler {
 		second is for tags within the schema */
 	private $schemasTagsStack = array();
 
+	private $firstPass;
+
 	public $parser;
 
 	/**

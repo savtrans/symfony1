@@ -70,6 +70,8 @@ class NestedElementHandler extends AbstractHandler {
      */
     private $target;
 
+    private $configurator;
+
     /**
      *  Constructs a new NestedElement handler and sets up everything.
      *

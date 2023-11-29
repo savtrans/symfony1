@@ -75,6 +75,8 @@ class Phing {
 	/** The build targets */
 	private $targets = array();
 
+	private $searchForThis;
+
 	/**
 	 * Set of properties that are passed in from commandline or invoking code.
 	 * @var Properties
