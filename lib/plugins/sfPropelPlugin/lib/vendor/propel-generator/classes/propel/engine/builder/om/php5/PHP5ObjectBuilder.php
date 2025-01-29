@@ -870,7 +870,7 @@ abstract class ".$this->getClassname()." extends ".ClassTools::classname($this->
 
 		$script .= "
 	".$visibility." function get$cfc(";
-		if ($col->isLazyLoad()) $script .= "PropelPDO \$con = null";
+		if ($col->isLazyLoad()) $script .= "?PropelPDO \$con = null";
 		$script .= ")
 	{";
 	}
@@ -954,7 +954,7 @@ abstract class ".$this->getClassname()." extends ".ClassTools::classname($this->
 	protected function addLazyLoaderOpen(&$script, Column $col) {
 		$cfc = $col->getPhpName();
 		$script .= "
-	protected function load$cfc(PropelPDO \$con = null)
+	protected function load$cfc(?PropelPDO \$con = null)
 	{";
 	}
 
@@ -2001,7 +2001,7 @@ abstract class ".$this->getClassname()." extends ".ClassTools::classname($this->
 	 **/
 	protected function addDeleteOpen(&$script) {
 		$script .= "
-	public function delete(PropelPDO \$con = null)
+	public function delete(?PropelPDO \$con = null)
 	{";
 	}
 
@@ -2087,7 +2087,7 @@ abstract class ".$this->getClassname()." extends ".ClassTools::classname($this->
 	 * @return     void
 	 * @throws     PropelException - if this object is deleted, unsaved or doesn't have pk match in db
 	 */
-	public function reload(\$deep = false, PropelPDO \$con = null)
+	public function reload(\$deep = false, ?PropelPDO \$con = null)
 	{
 		if (\$this->isDeleted()) {
 			throw new PropelException(\"Cannot reload a deleted object.\");
@@ -2508,7 +2508,7 @@ abstract class ".$this->getClassname()." extends ".ClassTools::classname($this->
 	 * @return     ".$this->getObjectClassname()." The current object (for fluent API support)
 	 * @throws     PropelException
 	 */
-	public function set".$this->getFKPhpNameAffix($fk, $plural = false)."($className \$v = null)
+	public function set".$this->getFKPhpNameAffix($fk, $plural = false)."(?$className \$v = null)
 	{";
 		foreach ($fk->getLocalColumns() as $columnName) {
 			$column = $table->getColumn($columnName);
@@ -2614,7 +2614,7 @@ abstract class ".$this->getClassname()." extends ".ClassTools::classname($this->
 	 * @return     $className The associated $className object.
 	 * @throws     PropelException
 	 */
-	public function get".$this->getFKPhpNameAffix($fk, $plural = false)."(PropelPDO \$con = null)
+	public function get".$this->getFKPhpNameAffix($fk, $plural = false)."(?PropelPDO \$con = null)
 	{";
 		$script .= "
 		if (\$this->$varName === null && ($conditional)) {";
@@ -3009,7 +3009,7 @@ abstract class ".$this->getClassname()." extends ".ClassTools::classname($this->
 	 * @return     int Count of related $className objects.
 	 * @throws     PropelException
 	 */
-	public function count$relCol(Criteria \$criteria = null, \$distinct = false, PropelPDO \$con = null)
+	public function count$relCol(?Criteria \$criteria = null, \$distinct = false, ?PropelPDO \$con = null)
 	{";
 
 		$script .= "
@@ -3109,7 +3109,7 @@ abstract class ".$this->getClassname()." extends ".ClassTools::classname($this->
 	 * @return     array {$className}[]
 	 * @throws     PropelException
 	 */
-	public function get$relCol(\$criteria = null, PropelPDO \$con = null)
+	public function get$relCol(\$criteria = null, ?PropelPDO \$con = null)
 	{";
 
 		$script .= "
@@ -3198,7 +3198,7 @@ abstract class ".$this->getClassname()." extends ".ClassTools::classname($this->
 	 * @return     $className
 	 * @throws     PropelException
 	 */
-	public function get".$this->getRefFKPhpNameAffix($refFK, $plural = false)."(PropelPDO \$con = null)
+	public function get".$this->getRefFKPhpNameAffix($refFK, $plural = false)."(?PropelPDO \$con = null)
 	{
 ";
 		$script .= "
@@ -3535,7 +3535,7 @@ abstract class ".$this->getClassname()." extends ".ClassTools::classname($this->
 		$reloadOnUpdate = $table->isReloadOnUpdate();
 		$reloadOnInsert = $table->isReloadOnInsert();
 		$script .= "
-	public function save(PropelPDO \$con = null".($reloadOnUpdate || $reloadOnInsert ? ", \$skipReload = false" : "").")
+	public function save(?PropelPDO \$con = null".($reloadOnUpdate || $reloadOnInsert ? ", \$skipReload = false" : "").")
 	{";
 	}
 

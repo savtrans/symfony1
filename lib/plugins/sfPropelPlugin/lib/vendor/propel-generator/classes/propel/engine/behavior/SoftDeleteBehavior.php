@@ -86,7 +86,7 @@ EOT;
 /**
  * Bypass the soft_delete behavior and force a hard delete of the current object
  */
-public function forceDelete(PropelPDO \$con = null)
+public function forceDelete(?PropelPDO \$con = null)
 {
 	{$this->getTable()->getPhpName()}Peer::disableSoftDelete();
 	\$this->delete(\$con);
@@ -97,7 +97,7 @@ public function forceDelete(PropelPDO \$con = null)
  *
  * @return     int The number of rows affected by this update and any referring fk objects' save() operations.
  */
-public function unDelete(PropelPDO \$con = null)
+public function unDelete(?PropelPDO \$con = null)
 {
 	\$this->{$this->getColumnSetter()}(null);
 	return \$this->save(\$con);
@@ -152,7 +152,7 @@ public static function isSoftDeleteEnabled()
  * @throws     PropelException Any exceptions caught during processing will be
  *		          rethrown wrapped into a PropelException.
  */
-public static function doSoftDelete(\$values, PropelPDO \$con = null)
+public static function doSoftDelete(\$values, ?PropelPDO \$con = null)
 {
 	if (\$values instanceof Criteria) {
 		// rename for clarity
@@ -192,7 +192,7 @@ public static function doSoftDelete(\$values, PropelPDO \$con = null)
  * @throws     PropelException Any exceptions caught during processing will be
  *		          rethrown wrapped into a PropelException.
  */
-public static function doDelete2(\$values, PropelPDO \$con = null)
+public static function doDelete2(\$values, ?PropelPDO \$con = null)
 {
 	if ({$this->getTable()->getPhpName()}Peer::isSoftDeleteEnabled()) {
 		return {$this->getTable()->getPhpName()}Peer::doSoftDelete(\$values, \$con);
@@ -209,7 +209,7 @@ public static function doDelete2(\$values, PropelPDO \$con = null)
  * @throws     PropelException Any exceptions caught during processing will be
  *		          rethrown wrapped into a PropelException.
  */
-public static function doSoftDeleteAll(PropelPDO \$con = null)
+public static function doSoftDeleteAll(?PropelPDO \$con = null)
 {
 	if (\$con === null) {
 		\$con = Propel::getConnection({$this->getTable()->getPhpName()}Peer::DATABASE_NAME, Propel::CONNECTION_WRITE);
@@ -230,7 +230,7 @@ public static function doSoftDeleteAll(PropelPDO \$con = null)
  * @throws     PropelException Any exceptions caught during processing will be
  *		          rethrown wrapped into a PropelException.
  */
-public static function doDeleteAll2(PropelPDO \$con = null)
+public static function doDeleteAll2(?PropelPDO \$con = null)
 {
 	if ({$this->getTable()->getPhpName()}Peer::isSoftDeleteEnabled()) {
 		return {$this->getTable()->getPhpName()}Peer::doSoftDeleteAll(\$con);
