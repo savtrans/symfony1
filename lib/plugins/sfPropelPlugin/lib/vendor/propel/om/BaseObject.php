@@ -135,7 +135,7 @@ abstract class BaseObject {
 	 * @param PropelPDO $con
 	 * @return bloolean
 	 */
-	public function preSave(PropelPDO $con = null)
+	public function preSave(?PropelPDO $con = null)
 	{
 		return true;
 	}
@@ -144,14 +144,14 @@ abstract class BaseObject {
 	 * Code to be run after persisting the object
 	 * @param PropelPDO $con
 	 */
-	public function postSave(PropelPDO $con = null) { }
+	public function postSave(?PropelPDO $con = null) { }
 
 	/**
 	 * Code to be run before inserting to database
 	 * @param PropelPDO $con
 	 * @return boolean
 	 */
-	public function preInsert(PropelPDO $con = null)
+	public function preInsert(?PropelPDO $con = null)
 	{
 		return true;
 	}
@@ -160,14 +160,14 @@ abstract class BaseObject {
 	 * Code to be run after inserting to database
 	 * @param PropelPDO $con 
 	 */
-	public function postInsert(PropelPDO $con = null) { }
+	public function postInsert(?PropelPDO $con = null) { }
 
 	/**
 	 * Code to be run before updating the object in database
 	 * @param PropelPDO $con
 	 * @return boolean
 	 */
-	public function preUpdate(PropelPDO $con = null)
+	public function preUpdate(?PropelPDO $con = null)
 	{
 		return true;
 	}
@@ -176,14 +176,14 @@ abstract class BaseObject {
 	 * Code to be run after updating the object in database
 	 * @param PropelPDO $con
 	 */
-	public function postUpdate(PropelPDO $con = null) { }
+	public function postUpdate(?PropelPDO $con = null) { }
 
 	/**
 	 * Code to be run before deleting the object in database
 	 * @param PropelPDO $con
 	 * @return boolean
 	 */
-	public function preDelete(PropelPDO $con = null)
+	public function preDelete(?PropelPDO $con = null)
 	{
 		return true;
 	}
@@ -192,7 +192,7 @@ abstract class BaseObject {
 	 * Code to be run after deleting the object in database
 	 * @param PropelPDO $con
 	 */
-	public function postDelete(PropelPDO $con = null) { }
+	public function postDelete(?PropelPDO $con = null) { }
 	
 	/**
 	 * Sets the modified state for the object to be false.

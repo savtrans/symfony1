@@ -212,7 +212,7 @@ abstract class BaseMovie extends BaseObject  implements Persistent {
 	 * @return     void
 	 * @throws     PropelException - if this object is deleted, unsaved or doesn't have pk match in db
 	 */
-	public function reload($deep = false, PropelPDO $con = null)
+	public function reload($deep = false, ?PropelPDO $con = null)
 	{
 		if ($this->isDeleted()) {
 			throw new PropelException("Cannot reload a deleted object.");
@@ -254,7 +254,7 @@ abstract class BaseMovie extends BaseObject  implements Persistent {
 	 * @see        BaseObject::setDeleted()
 	 * @see        BaseObject::isDeleted()
 	 */
-	public function delete(PropelPDO $con = null)
+	public function delete(?PropelPDO $con = null)
 	{
 		if ($this->isDeleted()) {
 			throw new PropelException("This object has already been deleted.");
@@ -311,7 +311,7 @@ abstract class BaseMovie extends BaseObject  implements Persistent {
 	 * @throws     PropelException
 	 * @see        doSave()
 	 */
-	public function save(PropelPDO $con = null)
+	public function save(?PropelPDO $con = null)
 	{
 		if ($this->isDeleted()) {
 			throw new PropelException("You cannot save an object that has been deleted.");
@@ -787,7 +787,7 @@ abstract class BaseMovie extends BaseObject  implements Persistent {
 	 * @return     array MovieI18n[]
 	 * @throws     PropelException
 	 */
-	public function getMovieI18ns($criteria = null, PropelPDO $con = null)
+	public function getMovieI18ns($criteria = null, ?PropelPDO $con = null)
 	{
 		if ($criteria === null) {
 			$criteria = new Criteria(MoviePeer::DATABASE_NAME);
@@ -836,7 +836,7 @@ abstract class BaseMovie extends BaseObject  implements Persistent {
 	 * @return     int Count of related MovieI18n objects.
 	 * @throws     PropelException
 	 */
-	public function countMovieI18ns(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+	public function countMovieI18ns(?Criteria $criteria = null, $distinct = false, ?PropelPDO $con = null)
 	{
 		if ($criteria === null) {
 			$criteria = new Criteria(MoviePeer::DATABASE_NAME);

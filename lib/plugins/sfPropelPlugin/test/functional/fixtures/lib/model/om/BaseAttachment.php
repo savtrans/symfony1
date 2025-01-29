@@ -276,7 +276,7 @@ abstract class BaseAttachment extends BaseObject  implements Persistent {
 	 * @return     void
 	 * @throws     PropelException - if this object is deleted, unsaved or doesn't have pk match in db
 	 */
-	public function reload($deep = false, PropelPDO $con = null)
+	public function reload($deep = false, ?PropelPDO $con = null)
 	{
 		if ($this->isDeleted()) {
 			throw new PropelException("Cannot reload a deleted object.");
@@ -316,7 +316,7 @@ abstract class BaseAttachment extends BaseObject  implements Persistent {
 	 * @see        BaseObject::setDeleted()
 	 * @see        BaseObject::isDeleted()
 	 */
-	public function delete(PropelPDO $con = null)
+	public function delete(?PropelPDO $con = null)
 	{
 		if ($this->isDeleted()) {
 			throw new PropelException("This object has already been deleted.");
@@ -373,7 +373,7 @@ abstract class BaseAttachment extends BaseObject  implements Persistent {
 	 * @throws     PropelException
 	 * @see        doSave()
 	 */
-	public function save(PropelPDO $con = null)
+	public function save(?PropelPDO $con = null)
 	{
 		if ($this->isDeleted()) {
 			throw new PropelException("You cannot save an object that has been deleted.");
@@ -831,7 +831,7 @@ abstract class BaseAttachment extends BaseObject  implements Persistent {
 	 * @return     Attachment The current object (for fluent API support)
 	 * @throws     PropelException
 	 */
-	public function setArticle(Article $v = null)
+	public function setArticle(?Article $v = null)
 	{
 		if ($v === null) {
 			$this->setArticleId(NULL);
@@ -858,7 +858,7 @@ abstract class BaseAttachment extends BaseObject  implements Persistent {
 	 * @return     Article The associated Article object.
 	 * @throws     PropelException
 	 */
-	public function getArticle(PropelPDO $con = null)
+	public function getArticle(?PropelPDO $con = null)
 	{
 		if ($this->aArticle === null && ($this->article_id !== null)) {
 			$this->aArticle = ArticlePeer::retrieveByPk($this->article_id);

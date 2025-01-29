@@ -597,7 +597,7 @@ abstract class BaseArticle extends BaseObject  implements Persistent {
 	 * @return     void
 	 * @throws     PropelException - if this object is deleted, unsaved or doesn't have pk match in db
 	 */
-	public function reload($deep = false, PropelPDO $con = null)
+	public function reload($deep = false, ?PropelPDO $con = null)
 	{
 		if ($this->isDeleted()) {
 			throw new PropelException("Cannot reload a deleted object.");
@@ -644,7 +644,7 @@ abstract class BaseArticle extends BaseObject  implements Persistent {
 	 * @see        BaseObject::setDeleted()
 	 * @see        BaseObject::isDeleted()
 	 */
-	public function delete(PropelPDO $con = null)
+	public function delete(?PropelPDO $con = null)
 	{
 		if ($this->isDeleted()) {
 			throw new PropelException("This object has already been deleted.");
@@ -701,7 +701,7 @@ abstract class BaseArticle extends BaseObject  implements Persistent {
 	 * @throws     PropelException
 	 * @see        doSave()
 	 */
-	public function save(PropelPDO $con = null)
+	public function save(?PropelPDO $con = null)
 	{
 		if ($this->isDeleted()) {
 			throw new PropelException("You cannot save an object that has been deleted.");
@@ -1287,7 +1287,7 @@ abstract class BaseArticle extends BaseObject  implements Persistent {
 	 * @return     Article The current object (for fluent API support)
 	 * @throws     PropelException
 	 */
-	public function setCategory(Category $v = null)
+	public function setCategory(?Category $v = null)
 	{
 		if ($v === null) {
 			$this->setCategoryId(NULL);
@@ -1314,7 +1314,7 @@ abstract class BaseArticle extends BaseObject  implements Persistent {
 	 * @return     Category The associated Category object.
 	 * @throws     PropelException
 	 */
-	public function getCategory(PropelPDO $con = null)
+	public function getCategory(?PropelPDO $con = null)
 	{
 		if ($this->aCategory === null && ($this->category_id !== null)) {
 			$this->aCategory = CategoryPeer::retrieveByPk($this->category_id);
@@ -1336,7 +1336,7 @@ abstract class BaseArticle extends BaseObject  implements Persistent {
 	 * @return     Article The current object (for fluent API support)
 	 * @throws     PropelException
 	 */
-	public function setBook(Book $v = null)
+	public function setBook(?Book $v = null)
 	{
 		if ($v === null) {
 			$this->setBookId(NULL);
@@ -1363,7 +1363,7 @@ abstract class BaseArticle extends BaseObject  implements Persistent {
 	 * @return     Book The associated Book object.
 	 * @throws     PropelException
 	 */
-	public function getBook(PropelPDO $con = null)
+	public function getBook(?PropelPDO $con = null)
 	{
 		if ($this->aBook === null && ($this->book_id !== null)) {
 			$this->aBook = BookPeer::retrieveByPk($this->book_id);
@@ -1419,7 +1419,7 @@ abstract class BaseArticle extends BaseObject  implements Persistent {
 	 * @return     array AuthorArticle[]
 	 * @throws     PropelException
 	 */
-	public function getAuthorArticles($criteria = null, PropelPDO $con = null)
+	public function getAuthorArticles($criteria = null, ?PropelPDO $con = null)
 	{
 		if ($criteria === null) {
 			$criteria = new Criteria(ArticlePeer::DATABASE_NAME);
@@ -1468,7 +1468,7 @@ abstract class BaseArticle extends BaseObject  implements Persistent {
 	 * @return     int Count of related AuthorArticle objects.
 	 * @throws     PropelException
 	 */
-	public function countAuthorArticles(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+	public function countAuthorArticles(?Criteria $criteria = null, $distinct = false, ?PropelPDO $con = null)
 	{
 		if ($criteria === null) {
 			$criteria = new Criteria(ArticlePeer::DATABASE_NAME);
@@ -1620,7 +1620,7 @@ abstract class BaseArticle extends BaseObject  implements Persistent {
 	 * @return     array Attachment[]
 	 * @throws     PropelException
 	 */
-	public function getAttachments($criteria = null, PropelPDO $con = null)
+	public function getAttachments($criteria = null, ?PropelPDO $con = null)
 	{
 		if ($criteria === null) {
 			$criteria = new Criteria(ArticlePeer::DATABASE_NAME);
@@ -1669,7 +1669,7 @@ abstract class BaseArticle extends BaseObject  implements Persistent {
 	 * @return     int Count of related Attachment objects.
 	 * @throws     PropelException
 	 */
-	public function countAttachments(Criteria $criteria = null, $distinct = false, PropelPDO $con = null)
+	public function countAttachments(?Criteria $criteria = null, $distinct = false, ?PropelPDO $con = null)
 	{
 		if ($criteria === null) {
 			$criteria = new Criteria(ArticlePeer::DATABASE_NAME);

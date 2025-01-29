@@ -26,7 +26,7 @@ class sfPropelLogger implements BasicLogger
    *
    * @param sfEventDispatcher $dispatcher
    */
-  public function __construct(sfEventDispatcher $dispatcher = null)
+  public function __construct(?sfEventDispatcher $dispatcher = null)
   {
     if (null === $dispatcher)
     {

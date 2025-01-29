@@ -55,7 +55,7 @@ class DefaultPlatform implements Platform {
 	 * Default constructor.
 	 * @param      PDO $con Optional database connection to use in this platform.
 	 */
-	public function __construct(PDO $con = null)
+	public function __construct(?PDO $con = null)
 	{
 		if ($con) $this->setConnection($con);
 		$this->initialize();
@@ -65,7 +65,7 @@ class DefaultPlatform implements Platform {
 	 * Set the database connection to use for this Platform class.
 	 * @param      PDO $con Database connection to use in this platform.
 	 */
-	public function setConnection(PDO $con = null)
+	public function setConnection(?PDO $con = null)
 	{
 		$this->con = $con;
 	}

@@ -434,7 +434,7 @@ class BasePeer
 	 * @throws     PropelException
 	 * @see        createSelectSql()
 	 */
-	public static function doSelect(Criteria $criteria, PropelPDO $con = null)
+	public static function doSelect(Criteria $criteria, ?PropelPDO $con = null)
 	{
 		$dbMap = Propel::getDatabaseMap($criteria->getDbName());
 		$db = Propel::getDB($criteria->getDbName());
@@ -480,7 +480,7 @@ class BasePeer
 	 * @throws     PropelException
 	 * @see        createSelectSql()
 	 */
-	public static function doCount(Criteria $criteria, PropelPDO $con = null)
+	public static function doCount(Criteria $criteria, ?PropelPDO $con = null)
 	{
 		$dbMap = Propel::getDatabaseMap($criteria->getDbName());
 		$db = Propel::getDB($criteria->getDbName());

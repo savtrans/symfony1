@@ -32,7 +32,7 @@ class FilterReader extends Reader {
 	 */
     protected $in;
     
-    function __construct(Reader $in = null) {
+    function __construct(?Reader $in = null) {
         $this->in = $in;
     }
     

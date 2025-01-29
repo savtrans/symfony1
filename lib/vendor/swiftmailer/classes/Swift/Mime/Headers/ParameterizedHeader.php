@@ -48,7 +48,7 @@ class Swift_Mime_Headers_ParameterizedHeader
    * @param Swift_Mime_Grammar $grammar
    */ 
   public function __construct($name, Swift_Mime_HeaderEncoder $encoder,
-    Swift_Encoder $paramEncoder = null, Swift_Mime_Grammar $grammar)
+    ?Swift_Encoder $paramEncoder, Swift_Mime_Grammar $grammar)
   {
     parent::__construct($name, $encoder, $grammar);
     $this->_paramEncoder = $paramEncoder;

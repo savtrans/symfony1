@@ -51,7 +51,7 @@ class PropelDateTime extends DateTime
 	 * @param      string $date Date/time value.
 	 * @param      DateTimeZone $tz (optional) timezone
 	 */
-	public static function newInstance($date, DateTimeZone $tz = null)
+	public static function newInstance($date, ?DateTimeZone $tz = null)
 	{
 		if ($tz) {
 			return new DateTime($date, $tz);

@@ -106,7 +106,7 @@ interface Persistent {
 	 * @return     void
 	 * @throws     Exception
 	 */
-	public function delete(PropelPDO $con = null);
+	public function delete(?PropelPDO $con = null);
 
 	/**
 	 * Saves the object.
@@ -114,5 +114,5 @@ interface Persistent {
 	 * @return     void
 	 * @throws     Exception
 	 */
-	public function save(PropelPDO $con = null);
+	public function save(?PropelPDO $con = null);
 }

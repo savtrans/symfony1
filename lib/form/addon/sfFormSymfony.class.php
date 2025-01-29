@@ -43,7 +43,7 @@ class sfFormSymfony extends sfForm
    *
    * @param sfEventDispatcher $dispatcher
    */
-  static public function setEventDispatcher(sfEventDispatcher $dispatcher = null)
+  static public function setEventDispatcher(?sfEventDispatcher $dispatcher = null)
   {
     self::$dispatcher = $dispatcher;
   }

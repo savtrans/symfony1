@@ -276,7 +276,7 @@ abstract class sfFormPropel extends sfFormObject
    *
    * @return string The filename used to save the file
    */
-  protected function saveFile($field, $filename = null, sfValidatedFile $file = null)
+  protected function saveFile($field, $filename = null, ?sfValidatedFile $file = null)
   {
     if (!$this->validatorSchema[$field] instanceof sfValidatorFile)
     {

@@ -380,7 +380,7 @@ class DebugPDO extends PropelPDO
 	 * @param      string $methodName (optional) Name of the method whose execution is being logged.
 	 * @param      array $debugSnapshot (optional) Previous return value from self::getDebugSnapshot().
 	 */
-	public function log($msg, $level = null, $methodName = null, array $debugSnapshot = null)
+	public function log($msg, $level = null, $methodName = null, ?array $debugSnapshot = null)
 	{
 		// If logging has been specifically disabled, this method won't do anything
 		if (!$this->getLoggingConfig('enabled', true))

@@ -152,7 +152,7 @@ class Phing {
 	 * @see runBuild()
 	 * @throws Exception - if there is an error during build
 	 */
-	public static function start($args, array $additionalUserProperties = null) {
+	public static function start($args, ?array $additionalUserProperties = null) {
 
 		try {
 			$m = new Phing();

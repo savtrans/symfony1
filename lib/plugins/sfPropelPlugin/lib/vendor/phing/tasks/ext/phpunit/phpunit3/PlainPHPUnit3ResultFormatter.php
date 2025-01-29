@@ -95,7 +95,7 @@ class PlainPHPUnit3ResultFormatter extends PHPUnit3ResultFormatter
 		$this->formatError("SKIPPED", $test);
 	}
 
-	private function formatError($type, PHPUnit_Framework_Test $test, Exception $e = null)
+	private function formatError($type, PHPUnit_Framework_Test $test, ?Exception $e = null)
 	{
 		if ($test != null)
 		{

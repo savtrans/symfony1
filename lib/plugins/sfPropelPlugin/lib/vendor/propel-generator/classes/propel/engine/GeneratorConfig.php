@@ -151,7 +151,7 @@ class GeneratorConfig {
    * @param      PDO $con
    * @return     Platform
    */
-  public function getConfiguredPlatform(PDO $con = null)
+  public function getConfiguredPlatform(?PDO $con = null)
   {
     $clazz = $this->getClassname("platformClass");
     $platform = new $clazz();
@@ -170,7 +170,7 @@ class GeneratorConfig {
    * @param      PDO $con
    * @return     SchemaParser
    */
-  public function getConfiguredSchemaParser(PDO $con = null)
+  public function getConfiguredSchemaParser(?PDO $con = null)
   {
     $clazz = $this->getClassname("reverseParserClass");
     $parser = new $clazz();
