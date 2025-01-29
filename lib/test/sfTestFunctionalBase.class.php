@@ -462,10 +462,6 @@ abstract class sfTestFunctionalBase
         $msg = sprintf($msg, 'notice');
         throw new RuntimeException($msg);
         break;
-      case E_STRICT:
-        $msg = sprintf($msg, 'strict');
-        throw new RuntimeException($msg);
-        break;
       case E_RECOVERABLE_ERROR:
         $msg = sprintf($msg, 'catchable');
         throw new RuntimeException($msg);

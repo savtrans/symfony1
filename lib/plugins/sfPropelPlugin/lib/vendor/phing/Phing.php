@@ -709,7 +709,6 @@ class Phing {
 
 				switch ($level) {
 
-					case E_STRICT:
 					case E_NOTICE:
 					case E_USER_NOTICE:
 						self::log($message, Project::MSG_VERBOSE);
